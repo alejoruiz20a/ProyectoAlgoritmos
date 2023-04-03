@@ -1,6 +1,7 @@
 package proyectoalgoritmos;
 import java.util.Scanner;
 //MAMAGUEVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+//ayudaporfavor
 
 
 public class Menu {
