@@ -8,6 +8,9 @@ public class ProyectoAlgoritmos {
     public static void main(String[] args) {
         
         //CREACION DE OBJETOS BASICOS
+        Carrito carrito1 = new Carrito();
+        Carrito nuevoCarrito = new Carrito();
+        Carrito headCarrito = carrito1;
         Scanner sc = new Scanner(System.in);
         Menu menu1 = new Menu();
         Admin admin1 = new Admin("admin","1112","Andrés Alejandro");
@@ -41,6 +44,8 @@ public class ProyectoAlgoritmos {
         empresa3.ram2.setRam("Kingston ValueRAM KVR24S17S8/8 8GB", 127000, "2400 MHz", "DDR4", 9);
         empresa3.placa1.setPlaca("Monster Tech H61", 250000, "LGA 1151", "DDR3", 5);
         empresa3.placa2.setPlaca("Biostar A320m", 290000, "AM4", "DDR4", 7);
+
+        
         
         //CREAR USUARIOS CLIENTES
         Usuarios usuario1 = new Usuarios();
@@ -58,6 +63,9 @@ public class ProyectoAlgoritmos {
         String usuario="";
         String contrasena="";
         int opcion = 0;
+        boolean inicioSesion = false;
+        int cantidad = 0;
+        int total=0;
         
         //INICIO DEL MENU
         do {
@@ -67,12 +75,94 @@ public class ProyectoAlgoritmos {
                 case 1:
                     do {
                         System.out.println("Desea?");
-                        System.out.println("1. Iniciar Sesión.");
+                        System.out.println("1. Iniciar Sesion.");
                         System.out.println("2. Registrarse.");
                         opcion=Integer.parseInt(sc.nextLine());
                         switch (opcion) {
                             case 1: 
-                                //------------------------------------------------------- HACER EL INICIO DE SESION
+                                System.out.println("Ingrese su usuario:");
+                                usuario=sc.nextLine();
+                                System.out.println("Ingrese su contrasena:");
+                                contrasena=sc.nextLine();
+                                Usuarios pointer=head;
+                                while (pointer!=null) {
+                                    if (usuario.equals(pointer.getUsuario()) && contrasena.equals(pointer.getContra())){
+                                        inicioSesion=true;
+                                        break;
+                                    } else {
+                                        pointer=pointer.next;
+                                    }
+                                }
+                                if (inicioSesion) {
+                                    do {
+                                        System.out.println("Bienvenido, senor(a) "+usuario);
+                                        menu1.IngresoCliente(empresa1,empresa2,empresa3);
+                                        System.out.println("9. Ver Carrito.");
+                                        System.out.println("0. Cerrar Sesion."); 
+                                        opcion = Integer.parseInt(sc.nextLine());
+                                        switch (opcion) {
+                                            case 1:
+                                                do {
+                                                    System.out.println("Ha seleccionado " + empresa1.getNombreEmpresa());
+                                                    System.out.println("Estos son los productos que ofrece:");
+                                                    menu1.ProductosCliente(empresa1);
+                                                    opcion = Integer.parseInt(sc.nextLine());
+                                                    menu1.detallesProducto(opcion, empresa1, cantidad, headCarrito, nuevoCarrito);
+                                                } while (opcion!=0);
+                                                opcion=1;
+                                                break;
+                                            case 2: 
+                                                do{
+                                                    System.out.println("Ha seleccionado " + empresa2.getNombreEmpresa());
+                                                    System.out.println("Estos son los productos que ofrece:");
+                                                    menu1.ProductosCliente(empresa2);
+                                                    opcion = Integer.parseInt(sc.nextLine());
+                                                    menu1.detallesProducto(opcion, empresa2, cantidad, headCarrito, nuevoCarrito);
+                                                } while (opcion!=0);
+                                                opcion = 1;
+                                                break;
+                                            case 3:
+                                                do{
+                                                    System.out.println("Ha seleccionado " + empresa3.getNombreEmpresa());
+                                                    System.out.println("Estos son los productos que ofrece:");
+                                                    menu1.ProductosCliente(empresa3);
+                                                    opcion = Integer.parseInt(sc.nextLine());
+                                                    menu1.detallesProducto(opcion, empresa3, cantidad, headCarrito, nuevoCarrito);
+                                                } while (opcion!=0);
+                                                opcion = 1;
+                                                break;
+                                            case 9:
+                                                System.out.println("Carrito de compras:");
+                                                headCarrito.mostrarCarrito(total, headCarrito);
+                                                break;
+                                            case 0:
+                                                System.out.println("Cerrar sesion?");
+                                                System.out.println("1. Si.");
+                                                System.out.println("2. No.");
+                                                opcion=Integer.parseInt(sc.nextLine());
+                                                switch (opcion) {
+                                                    case 1:
+                                                        opcion=0;
+                                                        break;
+                                                    case 2:
+                                                        opcion=1;
+                                                        break;
+                                                    default:
+                                                        System.out.println("Opcion invalida.");
+                                                        opcion=1;
+                                                        break;
+                                                }  
+                                                break;
+                                            default:
+                                                System.out.println("Opcion invalida");
+                                                break;
+                                        }
+                                    } while (opcion!=0);
+                                    opcion=1;
+                                    break;
+                                }else{
+                                    System.out.println("Lamentamos informarle que no puede iniciar sesión ya que no esta registrado o sus credenciales no coinciden.");
+                                }
                                 break;
                             case 2:
                                 System.out.println("REGISTRARSE:");
@@ -81,21 +171,12 @@ public class ProyectoAlgoritmos {
                                 System.out.println("Contrasena: ");
                                 nuevo.setContra(sc.nextLine());
                                 usuario1.registrarse(nuevo, head);
-                                usuario1.mostrarUsuarios(head);
+                                //usuario1.mostrarUsuarios(head);
                                 break;
                         }
                     } while (opcion!=0);
                     opcion=1;
                     break;
-                    /*do {
-                       menu1.IngresoCliente(empresa1,empresa2,empresa3); 
-                       opcion = Integer.parseInt(sc.nextLine());
-                       //INCLUIR EN CASE 1 CUANDO HAGAMOS EL INICIO DE SESION 
-                       ----------------------------------------------------------ESTA PARTE DEL CODIGO SERÁ USADA MÁS ADELANTE
-                    } while (opcion!=0);
-                    opcion=1;
-                    break;
-                    */
                 case 2:
                     System.out.println("Usuario:");
                     usuario=sc.nextLine();
@@ -153,6 +234,7 @@ public class ProyectoAlgoritmos {
                     break;
             }
         } while (opcion!=0);
+
         
     }
     

@@ -67,13 +67,20 @@ public class Ram {
     public int totalPrecio (int cantidad) {
         return this.precio*cantidad;
     }
-    public void venderProcesador (int cantidad) {
+    public void venderRam (int cantidad) {
         this.stock=this.stock-cantidad;
     }
 
     //METODOS
     public void mostrarProductos(){
         System.out.println(this.nombre + " - " + this.precio+ " - " + this.velocidad + " - " + this.tipoMemoria + " - " + this.stock);
+    }
+    public void detallesProducto(){
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Precio: "+this.precio);
+        System.out.println("Velocidad: "+this.velocidad);
+        System.out.println("Tipo de memoria: "+this.tipoMemoria);
+        System.out.println("Stock: "+this.stock);
     }
 
 }

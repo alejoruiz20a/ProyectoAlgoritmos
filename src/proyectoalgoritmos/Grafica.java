@@ -38,7 +38,7 @@ public class Grafica {
     }
 
     //GETTERS
-    public String getnombre(){
+    public String getNombre(){
         return nombre;
     }
     public int getPrecio(){
@@ -55,11 +55,17 @@ public class Grafica {
     public int totalPrecio (int cantidad) {
         return this.precio*cantidad;
     }
-    public void vender (int cantidad) {
+    public void venderGrafica (int cantidad) {
         this.stock=this.stock-cantidad;
     }
     
     public void mostrarProductos() {
         System.out.println(this.nombre+" - "+this.precio+" - "+this.Vram+" - "+this.stock);
+    }
+    public void detallesProducto(){
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Precio: "+this.precio);
+        System.out.println("Vram: "+this.Vram);
+        System.out.println("Stock: "+this.stock);
     }
 }

@@ -81,5 +81,13 @@ public class Procesador {
     public void mostrarProductos(){
         System.out.println(this.nombreProcesador + " - " + this.precio+ " - " + this.nucleos + " - " + this.velocidad +" - "+ this.socket +" - "+ this.stock);
     }
+ public void detallesProducto(){
+        System.out.println("Nombre: "+this.nombreProcesador);
+        System.out.println("Precio: "+this.precio);
+        System.out.println("Nucleos: "+this.nucleos);
+        System.out.println("Velocidad: "+this.velocidad);
+        System.out.println("Socket: "+this.socket);
+        System.out.println("Stock: "+this.stock);
+    }   
     
 }

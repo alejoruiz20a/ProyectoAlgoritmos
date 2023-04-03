@@ -44,7 +44,7 @@ public class Placa{
     }
 
     //GETTERS
-    public String getnombre(){
+    public String getNombre(){
         return nombre;
     }
     public int getPrecio(){
@@ -64,10 +64,17 @@ public class Placa{
     public int totalPrecio (int cantidad) {
         return this.precio*cantidad;
     }
-    public void vender (int cantidad) {
+    public void venderPlaca (int cantidad) {
         this.stock=this.stock-cantidad;
     }
      public void mostrarProductos(){
         System.out.println(this.nombre + " - " + this.precio+ " - " + this.socket + " - " + this.tipoMemoria + " - " + this.stock);
+    }
+     public void detallesProducto(){
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Precio: "+this.precio);
+        System.out.println("Socket: "+this.socket);
+        System.out.println("Tipo de memoria: "+this.tipoMemoria);
+        System.out.println("Stock: "+this.stock);
     }
 }

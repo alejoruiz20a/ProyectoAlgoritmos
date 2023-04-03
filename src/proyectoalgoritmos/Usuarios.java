@@ -26,6 +26,12 @@ public class Usuarios {
             pointer=pointer.next;
         }
     }
+    public Usuarios(){}
+
+    public Usuarios(String Usuario, String Contrasena){
+        this.Usuario = Usuario;
+        this.Contrasena = Contrasena;
+    }
 
     public void setUsuario(String Usuario){
         this.Usuario = Usuario;
