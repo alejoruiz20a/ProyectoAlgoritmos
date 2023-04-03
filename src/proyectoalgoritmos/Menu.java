@@ -1,5 +1,7 @@
 package proyectoalgoritmos;
 import java.util.Scanner;
+//MAMAGUEVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
 
 public class Menu {
     public Scanner sc = new Scanner(System.in);
