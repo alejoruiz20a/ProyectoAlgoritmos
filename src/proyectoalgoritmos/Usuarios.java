@@ -7,6 +7,8 @@ public class Usuarios {
     private String Usuario;
     private String Contrasena;
     public Usuarios next=null;
+
+    
     
     Scanner sc=new Scanner(System.in);
 
