@@ -1,23 +1,28 @@
 package proyectoalgoritmos;
 
+import java.util.Scanner;
+
 public class Carrito {
     private String nombre;
     private int precio;
     private int cantidad;
+    Scanner sc = new Scanner(System.in);
 
     public void anadirCarritoProc(Carrito headCarrito, Carrito nuevoCarrito) {
         Carrito pointer=headCarrito;
-        if (pointer==null) {
-            pointer=nuevoCarrito;
-            headCarrito=pointer;
+        if (headCarrito.getPrecio()==0) {
+            headCarrito.setNombre(nuevoCarrito.getNombre());
+            headCarrito.setPrecio(nuevoCarrito.getPrecio());
+            headCarrito.setCantidad(nuevoCarrito.getCantidad());
         } else {
             while (pointer.next!=null) {
                 pointer=pointer.next;
             }
             pointer.next=nuevoCarrito;
         }
+        System.out.println("Se ha anadido al carrito con exito.");
     }
-    //ERROR EN EL CARRITO, REVISAR
+    //ERROR EN EL CARRITO, REVISAR 
     public void mostrarCarrito(int total,Carrito headCarrito) {
         Carrito pointer=headCarrito;
         int i=1;

@@ -8,12 +8,11 @@ public class ProyectoAlgoritmos {
     public static void main(String[] args) {
         
         //CREACION DE OBJETOS BASICOS
-        Carrito carrito1 = new Carrito();
+        Carrito headCarrito = new Carrito("",0,0);
         Carrito nuevoCarrito = new Carrito();
-        Carrito headCarrito = carrito1;
         Scanner sc = new Scanner(System.in);
         Menu menu1 = new Menu();
-        Admin admin1 = new Admin("admin","1112","Andrés Alejandro");
+        Admin admin1 = new Admin("admin","1112","Andres Alejandro");
         
         
         //CREACION DE OBJETOS EMPRESA
@@ -26,7 +25,7 @@ public class ProyectoAlgoritmos {
         empresa1.ram2.setRam("Vengeance LPX 16GB", 250000, "3200 MHz", "DDR4", 7);
         empresa1.placa1.setPlaca("Gigabyte B450m", 510000 , "AM4", "DDR4", 5);
         empresa1.placa2.setPlaca("MSI A520m", 424000, "AM4", "DDR4", 3);
-        Empresa empresa2 = new Empresa("PC Master Race","357964280156","Bogotá");
+        Empresa empresa2 = new Empresa("PC Master Race","357964280156","Bogota");
         empresa2.procesador1.setProcesador("Intel Core I5 9300H",580000, 4,"2.4 GHz",5,"LGA 1151");
         empresa2.procesador2.setProcesador( "Ryzen 5 2400g", 650000, 4,"3.4 GHz", 8, "AM4");
         empresa2.grafica1.setGrafica("MSI GTX 1050ti", 950000, "4 GB", 5);
@@ -35,7 +34,7 @@ public class ProyectoAlgoritmos {
         empresa2.ram2.setRam("Spectrix D41 8GB", 190000, "2666 MHz", "DDR4", 14);
         empresa2.placa1.setPlaca("Aorus X670", 2075000, "AM5", "DDR5", 2);
         empresa2.placa2.setPlaca("ROG X670e", 4060000, "AM5", "DDR5", 1);
-        Empresa empresa3 = new Empresa("SoftwareUp","138057839021","Medellín");
+        Empresa empresa3 = new Empresa("SoftwareUp","138057839021","Medellin");
         empresa3.procesador1.setProcesador("AMD Athlon 3000g", 953000, 2,"3.5 GHz",7,"AM4");
         empresa3.procesador2.setProcesador( "Ryzen 7 5700G", 970000, 8,"4.6 GHz",3,"AM4");
         empresa3.grafica1.setGrafica("Sapphire Radeon 550 Pulse 2 GD5", 1097000,"2 GB", 2);
@@ -161,7 +160,7 @@ public class ProyectoAlgoritmos {
                                     opcion=1;
                                     break;
                                 }else{
-                                    System.out.println("Lamentamos informarle que no puede iniciar sesión ya que no esta registrado o sus credenciales no coinciden.");
+                                    System.out.println("Lamentamos informarle que no puede iniciar sesion ya que no esta registrado o sus credenciales no coinciden.");
                                 }
                                 break;
                             case 2:

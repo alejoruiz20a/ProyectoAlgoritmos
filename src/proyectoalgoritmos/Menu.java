@@ -26,7 +26,7 @@ public class Menu {
                     empresa.setNIT(sc.nextLine());
                     break;
                 case 3:
-                    System.out.println("Ingrese la nueva ubicación de la empresa: ");
+                    System.out.println("Ingrese la nueva ubicacion de la empresa: ");
                     empresa.setUbicacion(sc.nextLine());
                     break;    
                 case 4:
@@ -350,7 +350,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.grafica1.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.grafica1.getStock();
                             nuevoCarrito.setNombre(empresa.grafica1.getNombre());
                             nuevoCarrito.setPrecio(empresa.grafica1.getPrecio());
@@ -386,7 +386,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.grafica2.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.grafica2.getStock();
                             nuevoCarrito.setNombre(empresa.grafica2.getNombre());
                             nuevoCarrito.setPrecio(empresa.grafica2.getPrecio());
@@ -422,7 +422,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.ram1.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.ram1.getStock();
                             nuevoCarrito.setNombre(empresa.ram1.getNombre());
                             nuevoCarrito.setPrecio(empresa.ram1.getPrecio());
@@ -458,7 +458,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.ram2.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.ram2.getStock();
                             nuevoCarrito.setNombre(empresa.ram2.getNombre());
                             nuevoCarrito.setPrecio(empresa.ram2.getPrecio());
