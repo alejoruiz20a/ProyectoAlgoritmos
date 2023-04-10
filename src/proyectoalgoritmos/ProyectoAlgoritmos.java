@@ -131,8 +131,32 @@ public class ProyectoAlgoritmos {
                                                 opcion = 1;
                                                 break;
                                             case 9:
-                                                System.out.println("Carrito de compras:");
-                                                headCarrito.mostrarCarrito(total, headCarrito);
+                                                do {
+                                                    System.out.println("Carrito de compras:");
+                                                    headCarrito.mostrarCarrito(total, headCarrito);
+                                                    System.out.println("1. Comprar Carrito.");
+                                                    System.out.println("2. Vaciar Carrito.");
+                                                    System.out.println("0. Regresar.");
+                                                    opcion= Integer.parseInt(sc.nextLine());
+                                                    switch (opcion) {
+                                                        case 1:
+                                                            System.out.println("Carrito comprado, llegara en los proximos dias a su residencia.");
+                                                            headCarrito.next=null;
+                                                            headCarrito.setCarrito("", 0, 0);
+                                                            break;
+                                                        case 2:
+                                                            System.out.println("Carrito eliminado");
+                                                            headCarrito.next=null;
+                                                            headCarrito.setCarrito("", 0, 0);
+                                                            break;
+                                                        case 0:
+                                                            opcion=0;   
+                                                            break;                                             
+                                                        default:
+                                                            break;
+                                                    }
+                                                } while (opcion!=0);
+                                                opcion=1;
                                                 break;
                                             case 0:
                                                 System.out.println("Cerrar sesion?");
@@ -142,6 +166,8 @@ public class ProyectoAlgoritmos {
                                                 switch (opcion) {
                                                     case 1:
                                                         opcion=0;
+                                                        headCarrito.next=null;
+                                                        headCarrito.setCarrito("", 0, 0);
                                                         break;
                                                     case 2:
                                                         opcion=1;

@@ -1,7 +1,7 @@
 package proyectoalgoritmos;
 
 import java.util.Scanner;
-
+//HACER CAMBIOS EN USUARIO
 public class Carrito {
     private String nombre;
     private int precio;
@@ -9,12 +9,13 @@ public class Carrito {
     Scanner sc = new Scanner(System.in);
 
     public void anadirCarritoProc(Carrito headCarrito, Carrito nuevoCarrito) {
-        Carrito pointer=headCarrito;
         if (headCarrito.getPrecio()==0) {
             headCarrito.setNombre(nuevoCarrito.getNombre());
             headCarrito.setPrecio(nuevoCarrito.getPrecio());
             headCarrito.setCantidad(nuevoCarrito.getCantidad());
+//ERROR EN LA MUESTRA DEL TERCER PRODUCTO DEL CARRITO, REVISAR
         } else {
+            Carrito pointer=headCarrito;
             while (pointer.next!=null) {
                 pointer=pointer.next;
             }
@@ -22,7 +23,7 @@ public class Carrito {
         }
         System.out.println("Se ha anadido al carrito con exito.");
     }
-    //ERROR EN EL CARRITO, REVISAR 
+     
     public void mostrarCarrito(int total,Carrito headCarrito) {
         Carrito pointer=headCarrito;
         int i=1;
@@ -34,6 +35,14 @@ public class Carrito {
             i++;
         }
         System.out.println("TOTAL: "+total);
+    }
+
+    public void mostrar(Carrito headCarrito) {
+        Carrito pointer=headCarrito;
+        while (pointer!=null) {
+            System.out.println(". "+pointer.getNombre()+" - "+pointer.getPrecio()+ " - " +pointer.getCantidad());
+            pointer=pointer.next;
+        }
     }
 
     public Carrito () {

@@ -8,11 +8,11 @@ public class Menu {
     
     public void modificarEmpresa(Empresa empresa,int opcion){
         do {
-            System.out.println("NOMBRE - NIT - UBICACIÓN");
+            System.out.println("NOMBRE - NIT - UBICACION");
             empresa.imprimirEmpresa();
             System.out.println("1. Modificar Nombre.");
             System.out.println("2. Modificar NIT.");
-            System.out.println("3. Modificar Ubicación.");
+            System.out.println("3. Modificar Ubicacion.");
             System.out.println("4. Modificar Productos.");
             System.out.println("0. Regresar.");
             opcion=Integer.parseInt(sc.nextLine());
@@ -99,23 +99,23 @@ public class Menu {
                                     opcion=Integer.parseInt(sc.nextLine());
                                     switch (opcion) {
                                         case 1:
-                                            System.out.println("Ingrese el nuevo nombre de la gráfica:");
+                                            System.out.println("Ingrese el nuevo nombre de la grafica:");
                                             empresa.grafica1.setNombre(sc.nextLine());
-                                            System.out.println("Ingrese el nuevo precio de la gráfica:");
+                                            System.out.println("Ingrese el nuevo precio de la grafica:");
                                             empresa.grafica1.setPrecio(Integer.parseInt(sc.nextLine()));
-                                            System.out.println("Ingrese el nuevo Vram de la gráfica:");
+                                            System.out.println("Ingrese el nuevo Vram de la grafica:");
                                             empresa.grafica1.setVram(sc.nextLine());
-                                            System.out.println("Ingrese el nuevo stock de la gráfica:");
+                                            System.out.println("Ingrese el nuevo stock de la grafica:");
                                             empresa.grafica1.setStock(Integer.parseInt(sc.nextLine()));
                                             break;
                                         case 2:
-                                            System.out.println("Ingrese el nuevo nombre de la gráfica:");
+                                            System.out.println("Ingrese el nuevo nombre de la grafica:");
                                             empresa.grafica2.setNombre(sc.nextLine());
-                                            System.out.println("Ingrese el nuevo precio de la gráfica:");
+                                            System.out.println("Ingrese el nuevo precio de la grafica:");
                                             empresa.grafica2.setPrecio(Integer.parseInt(sc.nextLine()));
-                                            System.out.println("Ingrese el nuevo Vram de la gráfica:");
+                                            System.out.println("Ingrese el nuevo Vram de la grafica:");
                                             empresa.grafica2.setVram(sc.nextLine());
-                                            System.out.println("Ingrese el nuevo stock de la gráfica:");
+                                            System.out.println("Ingrese el nuevo stock de la grafica:");
                                             empresa.grafica2.setStock(Integer.parseInt(sc.nextLine()));
                                             break;
                                         case 0: 
@@ -278,7 +278,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.procesador1.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.procesador1.getStock();
                             nuevoCarrito.setNombre(empresa.procesador1.getNombreProcesador());
                             nuevoCarrito.setPrecio(empresa.procesador1.getPrecio());
@@ -314,7 +314,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.procesador2.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.procesador2.getStock();
                             nuevoCarrito.setNombre(empresa.procesador2.getNombreProcesador());
                             nuevoCarrito.setPrecio(empresa.procesador2.getPrecio());
@@ -530,7 +530,7 @@ public class Menu {
                         System.out.println("Ingrese la cantidad que desea comprar: ");
                         cantidad=Integer.parseInt(sc.nextLine());
                         if (cantidad>empresa.placa2.getStock()) {
-                            System.out.println("Stock insuficiente, se ajustó al maximo;");
+                            System.out.println("Stock insuficiente, se ajusto al maximo;");
                             cantidad=empresa.placa2.getStock();
                             nuevoCarrito.setNombre(empresa.placa2.getNombre());
                             nuevoCarrito.setPrecio(empresa.placa2.getPrecio());
