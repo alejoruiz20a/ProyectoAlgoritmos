@@ -1,24 +1,29 @@
 package proyectoalgoritmos;
-public class Placa{
+public class Placa{ //OBJETOS DE TIPO PLACA MADRE
+
+    //ATRIBUTOS
     private String nombre;
     private int precio;
     private String socket;
     private String tipoMemoria;
     private int stock;
-    public Placa(){
+
+    //METODOS CONSTRUCTORES
+    public Placa(){ //VACIO
         this.nombre = "";
         this.precio = 0;
         this.socket = "";
         this.tipoMemoria = "";
         this.stock = 0;
     }
-    public Placa(String nombre, int precio, String socket, String tipoMemoria, int stock){
+    public Placa(String nombre, int precio, String socket, String tipoMemoria, int stock){ //CON PARAMETROS 
         this.nombre = nombre;
         this.precio = precio;
         this.socket = socket;
         this.tipoMemoria = tipoMemoria;
         this.stock = stock;
     }
+
     //SETTERS
     public void setPlaca(String nombre, int precio, String socket, String tipoMemoria, int stock){
         this.nombre = nombre;
@@ -60,17 +65,19 @@ public class Placa{
         return stock;
     }
 
-     //METODOS NORMALES
-    public int totalPrecio (int cantidad) {
-        return this.precio*cantidad;
-    }
+    //METODOS NORMALES
+    //ELIMINA UNA CANTIDAD DEL STOCK
     public void venderPlaca (int cantidad) {
         this.stock=this.stock-cantidad;
     }
-     public void mostrarProductos(){
+
+    //MUESTRA EL PRODUCTO
+    public void mostrarProductos(){
         System.out.println(this.nombre + " - " + this.precio+ " - " + this.socket + " - " + this.tipoMemoria + " - " + this.stock);
     }
-     public void detallesProducto(){
+
+    //MUESTRA EL PRODUCTO A DETALLE
+    public void detallesProducto(){
         System.out.println("Nombre: "+this.nombre);
         System.out.println("Precio: "+this.precio);
         System.out.println("Socket: "+this.socket);

@@ -2,17 +2,17 @@ package proyectoalgoritmos;
 
 import java.util.Scanner;
 
-public class Usuarios {
+public class Usuarios { //ESTA CLASE ALMACENA LOS USUARIOS QUE TIENE REGISTRADOS EL PROGRAMA
+
     // ATRIBUTOS
     private String Usuario;
     private String Contrasena;
     public Usuarios next=null;
-
-    
     
     Scanner sc=new Scanner(System.in);
 
-    public void registrarse(Usuarios nuevo, Usuarios head) {
+    //ESTA FUNCION ANADE EL NUEVO USUARIO A LA LISTA DE USUARIOS
+    public void registrarse(Usuarios nuevo, Usuarios head) { 
         Usuarios pointer=head;
         while (pointer.next!=null) {
             pointer=pointer.next;
@@ -21,6 +21,7 @@ public class Usuarios {
         System.out.println("Se ha registrado con exito.");
     }
 
+    //MUESTRA LOS USUARIOS PARA CORROBORAR SI HAN SIDO REGISTRADOS
     public void mostrarUsuarios(Usuarios head) {
         Usuarios pointer=head;
         while (pointer!=null) {
@@ -28,13 +29,15 @@ public class Usuarios {
             pointer=pointer.next;
         }
     }
-    public Usuarios(){}
 
-    public Usuarios(String Usuario, String Contrasena){
+    //METODOS CONSTRUCTORES
+    public Usuarios(){}  //VACIO
+    public Usuarios(String Usuario, String Contrasena){ //CON PARAMETROS
         this.Usuario = Usuario;
         this.Contrasena = Contrasena;
     }
 
+    //SETTERS Y GETTERS
     public void setUsuario(String Usuario){
         this.Usuario = Usuario;
     }

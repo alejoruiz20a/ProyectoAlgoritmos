@@ -1,12 +1,14 @@
 package proyectoalgoritmos;
-public class Ram {
+public class Ram { //ESTA CLASE CONTIENE LOS OBJETOS DE LOS PRODUCTOS DE TIPO RAM
+    //ATRIBUTOS
     private String nombre;
     private int precio;
     private String velocidad;
     private String tipoMemoria;
     private int stock;
 
-    public Ram () { //CONSTRUCTOR VACIO
+    //CONSTRUCTOR VACIO
+    public Ram () { 
         this.nombre="";
         this.precio=0;
         this.velocidad="";
@@ -14,7 +16,8 @@ public class Ram {
         this.stock=0;
     }
 
-    public Ram (String nombre, int precio, String velocidad, String tipoMemoria, int stock) { //CONSTRUCTOR DE PARAMETROS
+    //CONSTRUCTOR DE PARAMETROS
+    public Ram (String nombre, int precio, String velocidad, String tipoMemoria, int stock) { 
         this.nombre=nombre;
         this.precio=precio;
         this.velocidad=velocidad;
@@ -63,18 +66,19 @@ public class Ram {
         return stock;
     }
 
-    //METODOS CONSTRUCTORES
-    public int totalPrecio (int cantidad) {
-        return this.precio*cantidad;
-    }
+    //METODOS DE LA CLASE
+
+    //ELIMINA UNA CANTIDAD INGRESADA DEL STOCK
     public void venderRam (int cantidad) {
         this.stock=this.stock-cantidad;
     }
 
-    //METODOS
+    //MUESTRA EL PRODUCTO EN PANTALLA, CON SUS ESPECIFICACIONES
     public void mostrarProductos(){
         System.out.println(this.nombre + " - " + this.precio+ " - " + this.velocidad + " - " + this.tipoMemoria + " - " + this.stock);
     }
+
+    //MUESTRA EL PRODUCTO A DETALLE, BIEN PRESENTADO
     public void detallesProducto(){
         System.out.println("Nombre: "+this.nombre);
         System.out.println("Precio: "+this.precio);

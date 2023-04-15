@@ -1,22 +1,25 @@
 package proyectoalgoritmos;
-public class Grafica {
+public class Grafica { //SE CREA LA CLASE TARGETA GRAFICA
+    //ATRIBUTOS
     private String nombre;
     private int precio;
     private String Vram;
     private int stock;
 
+    // METODOS CONSTRUCTORES
     public Grafica (){//SIN PARAMETROS
         this.nombre = "";
         this.precio = 0;
         this.Vram = "";
         this.stock = 0;
     }
-    public Grafica (String nombre, int precio, String Vram, int stock){//GET CON PARAMETROS
+    public Grafica (String nombre, int precio, String Vram, int stock){// CON PARAMETROS
         this.nombre = nombre;
         this.precio = precio;
         this.Vram = Vram;
         this.stock = stock;
     }
+
     //SETTERS
     public void setGrafica(String nombre, int precio, String Vram, int stock){//SETTER
         this.nombre = nombre;
@@ -52,9 +55,6 @@ public class Grafica {
     }
 
     //METODOS NORMALES
-    public int totalPrecio (int cantidad) {
-        return this.precio*cantidad;
-    }
     public void venderGrafica (int cantidad) {
         this.stock=this.stock-cantidad;
     }
