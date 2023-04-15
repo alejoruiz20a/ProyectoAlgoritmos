@@ -9,7 +9,7 @@ public class Menu {
     
     //MENU PRINCIPAL DEL PROGRAMA
     public void tipoUsuario () {
-        System.out.println("BIENVENIDO A LA TIENDA VIRTUAL DE CSM");
+        System.out.println("BIENVENIDO A LA TIENDA VIRTUAL DE COMPONENTES DE PC");
         System.out.println("Con que tipo de usuario desea ingresar?");
         System.out.println("1. Usuario Cliente.");
         System.out.println("2. Usuario Administrador.");
